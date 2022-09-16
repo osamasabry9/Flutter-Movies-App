@@ -23,20 +23,20 @@ shimmer: ^2.0.0
 <h3> 1- Home screen </h3>
 
 <p align="center">
-  <img src="Movie_1.jpg" width="500" title="1- Home screen">
+  <img src="Movie_1.png" width="500" title="1- Home screen">
 
 </p>
 
 <h3> 2- Popular Movies screen </h3>
 
 <p align="center">
-  <img src="Movie_2.jpg" width="500" title="2- Popular Movies screen">
+  <img src="Movie_2.png" width="500" title="2- Popular Movies screen">
 
 </p>
 <h3> 3- Top Rated Movies screen </h3>
 
 <p align="center">
-  <img src="Movie_3.jpg" width="500" title="3- Top Rated Movies screen">
+  <img src="Movie_3.png" width="500" title="3- Top Rated Movies screen">
 
 </p>
 
