@@ -39,6 +39,12 @@ shimmer: ^2.0.0
   <img src="Movie_3.png" width="500" title="3- Top Rated Movies screen">
 
 </p>
+<h3> 4- Movie Details screen </h3>
+
+<p align="center">
+  <img src="Movie_details.png" width="500" title="4- Movie Details screen ">
+
+</p>
 
 ## Getting Started
 
