@@ -6,19 +6,19 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../../core/utils/api_constance.dart';
 import '../../../../core/utils/enums.dart';
-import '../bloc/movies_bloc.dart';
-import '../bloc/movies_state.dart';
+import '../bloc/bloc_movies/movies_bloc.dart';
+import '../bloc/bloc_movies/movies_state.dart';
+import '../screens/movie_detail_screen.dart';
 
 class TopRatedMoviesWidget extends StatelessWidget {
-
   const TopRatedMoviesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(
-      buildWhen: (previous, current) => previous.topRatedState != current.topRatedState,
+      buildWhen: (previous, current) =>
+          previous.topRatedState != current.topRatedState,
       builder: (context, state) {
-        
         switch (state.topRatedState) {
           case RequestState.loading:
             // ignore: avoid_print
@@ -38,12 +38,18 @@ class TopRatedMoviesWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   itemCount: state.topRatedMovies.length,
                   itemBuilder: (context, index) {
-                    final movie =  state.topRatedMovies[index];
+                    final movie = state.topRatedMovies[index];
                     return Container(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MovieDetailScreen(
+                                  id: movie.id,
+                                ),
+                              ));
                         },
                         child: ClipRRect(
                           borderRadius:

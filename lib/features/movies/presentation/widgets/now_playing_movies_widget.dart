@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/utils/enums.dart';
 import '../../../../core/utils/api_constance.dart';
-import '../bloc/movies_bloc.dart';
-import '../bloc/movies_state.dart';
+import '../bloc/bloc_movies/movies_bloc.dart';
+import '../bloc/bloc_movies/movies_state.dart';
+import '../screens/movie_detail_screen.dart';
+
 
 class NowPlayingWidget extends StatelessWidget {
   const NowPlayingWidget({super.key});
@@ -19,6 +21,7 @@ class NowPlayingWidget extends StatelessWidget {
       builder: (context, state) {
         switch (state.nowPlayingState) {
           case RequestState.loading:
+            // ignore: avoid_print
             print('loading in now playing ');
             return const SizedBox(
                 height: 400.0,
@@ -37,7 +40,12 @@ class NowPlayingWidget extends StatelessWidget {
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
                       onTap: () {
-                        /// TODO : NAVIGATE TO MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>  MovieDetailScreen(id: item.id,),
+                              ));
+
                       },
                       child: Stack(
                         children: [

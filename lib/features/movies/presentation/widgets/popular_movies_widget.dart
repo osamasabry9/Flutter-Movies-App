@@ -6,8 +6,9 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../../core/utils/api_constance.dart';
 import '../../../../core/utils/enums.dart';
-import '../bloc/movies_bloc.dart';
-import '../bloc/movies_state.dart';
+import '../bloc/bloc_movies/movies_bloc.dart';
+import '../bloc/bloc_movies/movies_state.dart';
+import '../screens/movie_detail_screen.dart';
 
 class PopularMoviesWidget extends StatelessWidget {
   const PopularMoviesWidget({super.key});
@@ -42,7 +43,12 @@ class PopularMoviesWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>  MovieDetailScreen(id: movie.id,),
+                              ));
+
                         },
                         child: ClipRRect(
                           borderRadius:

@@ -1,3 +1,6 @@
 {
-    "search.quickOpen.includeSymbols": false
+    "search.quickOpen.includeSymbols": false,
+    "cSpell.words": [
+        "usecase"
+    ]
 }
